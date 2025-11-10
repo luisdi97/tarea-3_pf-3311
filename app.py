@@ -14,6 +14,8 @@ from scipy.spatial import cKDTree
 
 import pyproj
 
+import os
+
 
 # ----- Fuentes de datos -----
 
@@ -21,21 +23,21 @@ import pyproj
 #  https://geos.snitcr.go.cr/be/IGN_200/wfs y la capa
 #  IGN_200:redvial_200k
 
-archivo_redvial_200k = 'datos\\redvial_200k.gpkg'
+archivo_redvial_200k = os.path.join('datos', 'redvial_200k.gpkg')
 
 # El archivo original se obtuvo mediante el servicio WFS:
 #  https://geos.snitcr.go.cr/be/IGN_200/wfs y la capa
 #  IGN_200:edificaciones_y_construcciones_200k
 
 archivo_edificaciones_y_construcciones_200k = (
-    'datos\\edificaciones_y_construcciones_200k.gpkg'
+    os.path.join('datos', 'edificaciones_y_construcciones_200k.gpkg')
 )
 
 # El archivo original se obtuvo mediante el servicio WFS:
 #  https://geos.snitcr.go.cr/be/IGN_5_CO/wfs y la capa
 #  IGN_5_CO:limiteprovincial_5k
 
-archivo_limiteprovincial_5k = 'datos\\limiteprovincial_5k.gpkg'
+archivo_limiteprovincial_5k = os.path.join('datos', 'limiteprovincial_5k.gpkg')
 
 
 # ----- Funciones para recuperar y analizar los datos -----
