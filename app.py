@@ -526,25 +526,21 @@ if st.button("Determinar ruta:"):
 
     # Obtener nodos de la ruta
     nodos_ruta = paths[source]
-    st.write("nodos_ruta")
 
     # Filtrar ruta
     red_vial_gdf_nodes_ruta = (
         red_vial_gdf_nodes.loc[red_vial_gdf_nodes['node'].isin(nodos_ruta)]
     )
-    st.write("red_vial_gdf_nodes_ruta")
 
     # Filtrar nodo fuente
     red_vial_gdf_nodes_fuente = (
         red_vial_gdf_nodes.loc[red_vial_gdf_nodes['node'] == source]
     )
-    st.write("red_vial_gdf_nodes_fuente")
 
     # ----- Mapa con folium -----
 
     # Crear el mapa interactivo de la ruta
     mapa_ruta = red_vial_simple.explore()
-    st.write("mapa_ruta")
 
     # Añadir las edificaciones y construcciones al mapa
     edificaciones_y_construcciones_gdf.explore(
@@ -555,7 +551,6 @@ if st.button("Determinar ruta:"):
         tooltip=['categoria', 'nombre'],
         popup=True
     )
-    st.write("mapa_ruta edificaciones_y_construcciones_gdf")
 
     red_vial_gdf_nodes_ruta.explore(
         m=mapa_ruta,  # se usa el mapa que se creó en la instrucción anterior
@@ -564,7 +559,6 @@ if st.button("Determinar ruta:"):
         tooltip=['node'],
         popup=True
     )
-    st.write("mapa_ruta red_vial_gdf_nodes_ruta")
 
     red_vial_gdf_nodes_fuente.explore(
         m=mapa_ruta,  # se usa el mapa que se creó en la instrucción anterior
@@ -573,7 +567,6 @@ if st.button("Determinar ruta:"):
         tooltip=['node'],
         popup=True
     )
-    st.write("mapa_ruta red_vial_gdf_nodes_fuente")
 
     # Agregar un control de capas al mapa
     folium.LayerControl().add_to(mapa_ruta)
