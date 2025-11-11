@@ -3,3 +3,5 @@ plotly
 geopandas
 folium
 streamlit-folium
+matplotlib
+mapclassify
